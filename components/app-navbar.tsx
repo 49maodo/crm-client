@@ -24,14 +24,14 @@ const navigation = [
 
 export function NavbarLayout({ children }: NavbarLayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const dispatch = useDispatch<AppDispatch>(); 
+  const dispatch = useDispatch<AppDispatch>();
   const { user } = useAppSelector((state) => state.auth);
   const router = useRouter();
   const pathname = usePathname();
 
   const handleLogout = async () => {
     // logout();
-    await dispatch(logoutUser());  
+    await dispatch(logoutUser());
     router.push('/login');
   };
 
@@ -47,7 +47,7 @@ export function NavbarLayout({ children }: NavbarLayoutProps) {
                 <div className='w-8 h-8 bg-primary rounded-lg flex items-center justify-center'>
                   <Users className='w-5 h-5 text-white' />
                 </div>
-                <span className='text-xl font-bold'>CRM Pro</span>
+                <span className='text-xl font-bold'>CRM</span>
               </div>
 
               {/* Navigation desktop */}
